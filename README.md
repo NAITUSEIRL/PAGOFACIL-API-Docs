@@ -31,9 +31,11 @@ You create an order sending the following information as POST. You need to redir
 
 | Variable        | Type           | Size  | Description |
 | ------------- |:-------------:| -----:| -----:|
-| col 3 is      | right-aligned | $1600 | $1600 |
-| col 2 is      | centered      |   $12 | $1600 |
-| zebra stripes | are neat      |    $1 | $1600 |
+| monto     | int | 11 | This value corresponds to the ammount of the order. Chilean currency only uses int values |
+| order_id     | varchar      |   45 | This variable correspond to the Order Id of the store. It is AlphaNumeric |
+| codigo_comercio | varchar     |    45| This code corresponds to the code that Transbank gaves you after hiring teh service |
+| token_service | varchar      |    255 | This variable corresponds to the token that APG gives you to use teh service |
+| token_tienda | are neat      |    $1 | $1600 |
 
 ### Verifying the order.
 
