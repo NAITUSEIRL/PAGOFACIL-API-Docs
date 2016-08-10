@@ -115,6 +115,8 @@ EndPoint : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
 
 
 #### Successful Reply
+On a successful reply the answer will be like tho following :
+
     {
     "detalles_transaccion": {
       "order_id": 63,
@@ -144,7 +146,8 @@ EndPoint : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
 | transaction_date | varchar     |    10 | Transaction Date |
 
 
-  #### Null reply
+#### Null reply
+
     {
       "detalles_transaccion":null
     }
@@ -155,3 +158,5 @@ EndPoint : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
 * [Woocommerce plugin for APG](https://github.com/NAITUSEIRL/tbkaas-woo-gateway "Woocommerce plugin for APG")
 
 ## Creating your own connection.
+
+For creating your own plugin or connection you must specified the callback url where the server will reply after the completition of the payment.
