@@ -16,6 +16,9 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 
 ### Endpoints
 
+* Create Transaction : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
+* Verify Transaction : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
+* Transaction Details : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
 
 ### Creating an order 
 
@@ -35,7 +38,7 @@ You create an order sending the following information as POST. You need to redir
 | order_id     | varchar      |   45 | This variable correspond to the Order Id of the store. It is AlphaNumeric |
 | codigo_comercio | varchar     |    45| This code corresponds to the code that Transbank gaves you after hiring teh service |
 | token_service | varchar      |    255 | This variable corresponds to the token that APG gives you to use teh service |
-| token_tienda | are neat      |    $1 | $1600 |
+| token_tienda | varchar     |    61 | This variable is random, and is the one that makes possible to retrieve the information of the transaction later on |
 
 ### Verifying the order.
 
