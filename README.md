@@ -29,6 +29,12 @@ You create an order sending the following information as POST. You need to redir
             'token_tienda'
         );
 
+| Variable        | Type           | Size  | Description |
+| ------------- |:-------------:| -----:| -----:|
+| col 3 is      | right-aligned | $1600 | $1600 |
+| col 2 is      | centered      |   $12 | $1600 |
+| zebra stripes | are neat      |    $1 | $1600 |
+
 ### Verifying the order.
 
 ## Already Build Apps / Plugins
