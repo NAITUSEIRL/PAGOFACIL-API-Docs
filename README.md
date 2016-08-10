@@ -16,6 +16,16 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 
 ### Endpoints
 
+#### Production Endpoints
+
+* Server : https://sv1.tbk.cristiantala.cl/tbk/v1/
+* Create Transaction : https://sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
+* Verify Transaction : https://sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
+* Transaction Details : https://sv1.tbk.cristiantala.cl/tbk/v1/getOrden
+
+#### Development EndPoints 
+
+* Server : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1
 * Create Transaction : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
 * Verify Transaction : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
 * Transaction Details : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
