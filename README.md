@@ -54,7 +54,7 @@ You create an order sending the following information as POST. You need to redir
 
 ## Already Build Apps / Plugins
 
-* Woocommerce plugin.
+* [Woocommerce plugin for APG](https://github.com/NAITUSEIRL/tbkaas-woo-gateway "Woocommerce plugin for APG")
 
 ## Creating your own connection.
 
