@@ -13,7 +13,13 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 
 ## How does APG server work.
 
+
+### Endpoints
+
+
 ### Creating an order 
+
+You create an order sending the following information as POST. You need to redirect the post also to the ENDPOINT, so we recommend using a form to POST the data.
 
         $pago_args = array(
             'monto'
@@ -23,7 +29,7 @@ Not much really, APG is designed to be easy to implement, does not matter the la
             'token_tienda'
         );
 
-### verifying the order.
+### Verifying the order.
 
 ## Already Build Apps / Plugins
 
