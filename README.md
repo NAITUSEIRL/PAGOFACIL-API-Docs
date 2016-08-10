@@ -23,14 +23,14 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 * Verify Transaction [POST] : https://sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
 * Transaction Details [POST] : https://sv1.tbk.cristiantala.cl/tbk/v1/getOrden
 
-#### Development EndPoints 
+#### Development EndPoints
 
 * Server : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1
 * Create Transaction [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
 * Verify Transaction [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
 * Transaction Details [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
 
-### Creating an order 
+### Creating an order
 
 You create an order sending the following information as POST. You need to redirect the post also to the ENDPOINT, so we recommend using a form to POST the data.
 
@@ -50,6 +50,12 @@ You create an order sending the following information as POST. You need to redir
 | token_service | varchar      |    255 | This variable corresponds to the token that APG gives you to use teh service |
 | token_tienda | varchar     |    61 | This variable is random, and is the one that makes possible to retrieve the information of the transaction later on |
 
+If all the information was sent correctly and you have permissions to create a transaction you will see the following screen.
+
+![alt text](img/INITTRANSACTION.png "AASLabs INITTRANSACTION")
+
+After this point the server will take care of the payment and it will reply after the completition of it. This could be successful or a failure.
+
 ### Verifying the order.
 
 ## Already Build Apps / Plugins
@@ -57,6 +63,3 @@ You create an order sending the following information as POST. You need to redir
 * [Woocommerce plugin for APG](https://github.com/NAITUSEIRL/tbkaas-woo-gateway "Woocommerce plugin for APG")
 
 ## Creating your own connection.
-
-
-
