@@ -129,19 +129,19 @@ EndPoint : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
       }
     }
 
-When the
 
-  | Variable        | Type           | Size  | Description |
-  | ------------- |:-------------:| -----:| -----:|
-  | order_id     | varchar | 45 | Order identification of the store. |
-  | authorization_code     | varchar      |   255 | This is the authorization code that Transbank replies of a successfull order. |
-  | payment_type_code | varchar     |    4| corresponds to the type of payment received |
-  | amount | decimal      |    10,2 | corresponds to the amount of the order in decimal  |
-  | card_number | varchar     |    16 |  Corresponds to the number on the card. Generally will be only the last 4 numbers on teh card |
-  | card_expiration_date | varchar     |    4 | date that the card expires. generally null unless you have more privileges |
-  | shares_number | int     |    2 | The quantity of shares for the payment |
-  | accounting_date | varchar     |    4 | Accounting Date |
-  | transaction_date | varchar     |    10 | Transaction Date |
+
+| Variable        | Type           | Size  | Description |
+| ------------- |:-------------:| -----:| -----:|
+| order_id     | varchar | 45 | Order identification of the store. |
+| authorization_code     | varchar      |   255 | This is the authorization code that Transbank replies of a successfull order. |
+| payment_type_code | varchar     |    4| corresponds to the type of payment received |
+| amount | decimal      |    10,2 | corresponds to the amount of the order in decimal  |
+| card_number | varchar     |    16 |  Corresponds to the number on the card. Generally will be only the last 4 numbers on teh card |
+| card_expiration_date | varchar     |    4 | date that the card expires. generally null unless you have more privileges |
+| shares_number | int     |    2 | The quantity of shares for the payment |
+| accounting_date | varchar     |    4 | Accounting Date |
+| transaction_date | varchar     |    10 | Transaction Date |
 
 
   #### Null reply
