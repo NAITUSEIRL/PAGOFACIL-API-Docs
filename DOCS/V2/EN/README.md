@@ -18,38 +18,36 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 
 #### Production Endpoints
 
-* Server : https://sv1.tbk.cristiantala.cl/tbk/v1/
-* Create Transaction [POST] : https://sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
-* Verify Transaction [POST] : https://sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
-* Transaction Details [POST] : https://sv1.tbk.cristiantala.cl/tbk/v1/getOrden
+* Server : https://sv1.tbk.cristiantala.cl/tbk/v2/
+* Create Transaction [POST] : https://sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
 
 #### Development EndPoints
 
-* Server : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1
+* Server : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v2
 * Create Transaction [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
-* Verify Transaction [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
-* Transaction Details [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
+
 
 ### Creating an order
 
 You create an order sending the following information as POST. You need to redirect the post also to the ENDPOINT, so we recommend using a form to POST the data.
 
-EndPoint : https://sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
+EndPoint : https://sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
         $pago_args = array(
-            'monto'
-            'order_id'
-            'codigo_comercio'
-            'token_service'
-            'token_tienda'
+            'ct_monto'
+            'ct_order_id'
+            'ct_email'
+            'ct_token_service'
+            'ct_token_tienda'
+            'ct_firma'
         );
 
 | Variable        | Type           | Size  | Description |
 | ------------- |:-------------:| -----:| -----:|
-| monto     | int | 11 | This value corresponds to the ammount of the order. Chilean currency only uses int values |
-| order_id     | varchar      |   45 | This variable correspond to the Order Id of the store. It is AlphaNumeric |
-| codigo_comercio | varchar     |    45| This code corresponds to the code that Transbank gaves you after hiring teh service |
-| token_service | varchar      |    255 | This variable corresponds to the token that APG gives you to use teh service |
-| token_tienda | varchar     |    61 | This variable is random, and is the one that makes possible to retrieve the information of the transaction later on. It must be keep on the server to make teh query later |
+| ct_monto     | int | 11 | This value corresponds to the ammount of the order. Chilean currency only uses int values |
+| ct_order_id     | varchar      |   45 | This variable correspond to the Order Id of the store. It is AlphaNumeric |
+| ct_codigo_comercio | varchar     |    45| This code corresponds to the code that Transbank gaves you after hiring teh service |
+| ct_token_service | varchar      |    255 | This variable corresponds to the token that APG gives you to use teh service |
+|ct_ token_tienda | varchar     |    61 | This variable is random, and is the one that makes possible to retrieve the information of the transaction later on. It must be keep on the server to make teh query later |
 
 If all the information was sent correctly and you have permissions to create a transaction you will see the following screen.
 
