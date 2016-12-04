@@ -45,13 +45,14 @@ EndPoint : https://sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
 | ------------- |:-------------:| -----:| -----:|
 | ct_monto     | int | 11 | This value corresponds to the ammount of the order. Chilean currency only uses int values |
 | ct_order_id     | varchar      |   45 | This variable correspond to the Order Id of the store. It is AlphaNumeric |
-| ct_codigo_comercio | varchar     |    45| This code corresponds to the code that Transbank gaves you after hiring teh service |
+| ct_email | varchar     |    255| This email corresponds to the clients eMail. He will get a confirmation email if the process was successfull. |
 | ct_token_service | varchar      |    255 | This variable corresponds to the token that APG gives you to use teh service |
-|ct_ token_tienda | varchar     |    61 | This variable is random, and is the one that makes possible to retrieve the information of the transaction later on. It must be keep on the server to make teh query later |
+|ct_token_tienda | varchar     |    61 | This variable is random, and is the one that makes possible to retrieve the information of the transaction later on. It must be keep on the server to make teh query later |
+|ct_firma | varchar     |    255 | This variable corresponds to the result of the message signed. |
 
 If all the information was sent correctly and you have permissions to create a transaction you will see the following screen.
 
-![alt text](img/INITTRANSACTION.png "AASLabs INITTRANSACTION")
+![alt text](../../img/INITTRANSACTION.png "Pago Fácil INITTRANSACTION")
 
 After this point the server will take care of the payment and it will reply after the completition of it. This could be successful or a failure.
 
