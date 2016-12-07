@@ -56,60 +56,33 @@ If all the information was sent correctly and you have permissions to create a t
 
 After this point the server will take care of the payment and it will reply after the completition of it. This could be successful or a failure.
 
-The reply consist only on the order_id .
+If the transaction is successful the callback will be executed to the url provided as "CallBackUrl" on the dashboard. This callback will include a post with the following parameters.
 
-    $variablesRetornoFijas = array(
-        "order_id" => $order_id,
-    );
+        $resultado = [
+            "ct_order_id",
+            "ct_token_tienda",
+            "ct_monto",
+            "ct_token_service",
+            "ct_estado",
+            "ct_authorization_code",
+            "ct_payment_type_code",
+            "ct_card_number",
+            "ct_card_expiration_date",
+            "ct_shares_number",
+            "ct_accounting_date",
+            "ct_transaction_date",
+            "ct_order_id_mall",
+            "ct_firma",
+        ];
 
-Where order_id corresponds to the "Your" order identification ( Store's order id ).
-
-
-### Verifying the order.
-
-If you notice the reply of the server does not include the status of the order. This is done to increse the security of the transaction and eliminate the possibility of having a man in the middle attack. The server will always have a valid SSL certificate.
-
-To ask for the status of the order, we use the order_id returned from the server to check if the order exists, if it exists we will ask the server the status of the order through posting the following values.
-
-EndPoint : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/estadoOrden
-
-    $fields = array(
-        'codigo_comercio',
-        'token_service',
-        'order_id',
-        'monto',
-        'token_tienda',
-    );
+Where ct_order_id corresponds to the "Your" order identification ( Store's order id ).
 
 
-  All the fields have the same meaning that in the previus section. You must remember that the "token_tienda" that was generated randomly should be the same that we use before. If one of the following fields don't match to the information that the server has, the answer will be null.
+### Verifying the response.
 
-If the reply of  is "COMPLETADA" the order is successfully paid, and we can continue. For example :
-
-    {
-      "ESTADO":"COMPLETADA"
-    }
-
-If the reply of the server is any other the order is not yet paid. For example :
-
-    {
-      "ESTADO":null
-    }
+The response in the last section is signed. What we need to do is check if the signature corresponds.
 
 
-
-
-To get the details of the order that is already paid ( "COMPLETADA" ), we will ask for the information with the same variables but to a different EndPoint.
-
-EndPoint : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/getOrden
-
-    $fields = array(
-        'codigo_comercio'
-        'token_service'
-        'order_id'
-        'monto'
-        'token_tienda'
-    );
 
 
 
@@ -143,13 +116,6 @@ On a successful reply the answer will be like tho following :
 | shares_number | int     |    2 | The quantity of shares for the payment |
 | accounting_date | varchar     |    4 | Accounting Date |
 | transaction_date | varchar     |    10 | Transaction Date |
-
-
-#### Null reply
-
-    {
-      "detalles_transaccion":null
-    }
 
 
 ## Already Build Apps / Plugins
