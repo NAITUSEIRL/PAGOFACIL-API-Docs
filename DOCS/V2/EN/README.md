@@ -32,7 +32,8 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 You create an order sending the following information as POST. You need to redirect the post also to the ENDPOINT, so we recommend using a form to POST the data.
 
 EndPoint : https://sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
-        $pago_args = array(
+       
+       $pago_args = array(
             'ct_monto'
             'ct_order_id'
             'ct_email'
