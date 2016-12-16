@@ -13,6 +13,14 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 
 ## How does APG server work.
 
+### Dashboards
+
+* Development :http://dashboard-dev.cristiantala.cl/
+* Production : https://dashboard.pagofacil.org/
+
+### Development Information : 
+* Comerce Code : 597020000543
+* Credit Card Information : http://wiki.cristiantala.cl/doku.php?id=datos_para_realizar_las_certificaciones_de_transbank
 
 ### Endpoints
 
