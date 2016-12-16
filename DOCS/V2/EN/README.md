@@ -24,7 +24,7 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 #### Development EndPoints
 
 * Server : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v2
-* Create Transaction [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v1/initTransaction
+* Create Transaction [POST] : https://dev-env.sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
 
 
 ### Creating an order
