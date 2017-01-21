@@ -41,9 +41,7 @@ All requests and responses must be signed/verified using HMAC-SHA256 where:
             .map(k=>[k, req.body[k]])
             .filter(p=>p[0].indexOf('ct_') === 0)
             .sort((a,b)=>a[0] > b[0])
-            .map(p=>{
-                return p[0] + p[1];
-            })
+            .map(p=>p[0] + p[1])
             .join('');
 
         var hmac = crypto.createHmac('sha256', config.pagoFacilSecret);
