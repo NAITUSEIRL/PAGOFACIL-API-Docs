@@ -30,3 +30,7 @@ All requests and responses must be signed/verified using HMAC-SHA256 where:
         }
         return $resultado;
     }
+## Ruby Signing Example
+      def sign(fields, key=@key)
+        Digest::HMAC.hexdigest(fields.sort.join, key, Digest::SHA256)
+      end
