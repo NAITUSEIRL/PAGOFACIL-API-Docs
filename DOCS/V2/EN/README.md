@@ -41,6 +41,7 @@ If you are doing the integration against the developer server you need to activa
 ### Creating an order
 
 You create an order sending the following information as POST. You need to redirect the post also to the ENDPOINT, so we recommend using a form to POST the data.
+From now on, all the interaction between the server and the client will be signed. The signing mechanism could be seen at * [Signing Mechanism](SigningMechanism.md "Signing Mechanism").
 
 EndPoint : https://sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
        
@@ -92,10 +93,7 @@ Where ct_order_id corresponds to the "Your" order identification ( Store's order
 
 ### Verifying the response.
 
-The response in the last section is signed. What we need to do is check if the signature corresponds.
-
-
-
+The response in the last section is signed. What we need to do is check if the signature corresponds as described on [Signing Mechanism](SigningMechanism.md "Signing Mechanism").
 
 
 #### Successful Reply
@@ -103,15 +101,16 @@ On a successful reply the answer will be like tho following :
 
     {
     "detalles_transaccion": {
-      "order_id": 63,
-      "authorization_code": "1213",
-      "payment_type_code": "VN",
-      "amount": "400.00",
-      "card_number": "6623",
-      "card_expiration_date": null,
-      "shares_number": 0,
-      "accounting_date": "0616",
-      "transaction_date": "2016-06-16"
+      "ct_order_id": 63,
+      "ct_authorization_code": "1213",
+      "ct_payment_type_code": "VN",
+      "ct_amount": "400.00",
+      "ct_card_number": "6623",
+      "ct_card_expiration_date": null,
+      "ct_shares_number": 0,
+      "ct_accounting_date": "0616",
+      "ct_transaction_date": "2016-06-16"
+      "ct_firma":"caf932be1704683d7e88d2421d68691edda11a134ad7d90311866f4ee5471a04"
       }
     }
 
@@ -128,6 +127,7 @@ On a successful reply the answer will be like tho following :
 | shares_number | int     |    2 | The quantity of shares for the payment |
 | accounting_date | varchar     |    4 | Accounting Date |
 | transaction_date | varchar     |    10 | Transaction Date |
+|ct_firma | varchar     |    255 | This variable corresponds to the result of the message signed. |
 
 
 ## Already Build Apps / Plugins
