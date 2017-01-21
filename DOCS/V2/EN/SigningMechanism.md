@@ -1,4 +1,4 @@
-### Signing mechanism
+# Signing mechanism
 
 All requests and responses must be signed/verified using HMAC-SHA256 where:
 
