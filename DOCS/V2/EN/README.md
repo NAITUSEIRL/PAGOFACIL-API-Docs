@@ -11,6 +11,8 @@ This gateway is a middleware that makes easy the connection between different ap
 
 Not much really, APG is designed to be easy to implement, does not matter the language, application or service that you use to connect. You just need to send a POST request to the APG Server including all the order information, and then you will have a reply telling that the process is finished. After that you will need to send an other request to verify the transaction information.
 
+If you are doing the integration against the developer server you need to activate your service with a fake payment with the fake credit card data.
+
 ## How does APG server work.
 
 ### Dashboards
@@ -21,6 +23,7 @@ Not much really, APG is designed to be easy to implement, does not matter the la
 ### Development Information : 
 * Comerce Code : 597020000543
 * Credit Card Information : http://wiki.cristiantala.cl/doku.php?id=datos_para_realizar_las_certificaciones_de_transbank
+* Important to activate your service and to do the trials.
 
 ### Endpoints
 
@@ -61,7 +64,7 @@ EndPoint : https://sv1.tbk.cristiantala.cl/tbk/v2/initTransaction
 
 If all the information was sent correctly and you have permissions to create a transaction you will see the following screen.
 
-![alt text](../../img/INITTRANSACTION.png "Pago Fácil INITTRANSACTION")
+![alt text](../../../img/INITTRANSACTION.png "Pago Fácil INITTRANSACTION")
 
 After this point the server will take care of the payment and it will reply after the completition of it. This could be successful or a failure.
 
