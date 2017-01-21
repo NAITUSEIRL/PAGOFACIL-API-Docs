@@ -34,3 +34,21 @@ All requests and responses must be signed/verified using HMAC-SHA256 where:
       def sign(fields, key=@key)
         Digest::HMAC.hexdigest(fields.sort.join, key, Digest::SHA256)
       end
+## Javascript Signing Example
+    const crypto = require('crypto');
+    module.exports = function (req, res) { //Express Handler for post request
+        var message = Object.keys(req.body)
+            .map(k=>[k, req.body[k]])
+            .filter(p=>p[0].indexOf('ct_') === 0)
+            .sort((a,b)=>a[0] > b[0])
+            .map(p=>{
+                return p[0] + p[1];
+            })
+            .join('');
+
+        var hmac = crypto.createHmac('sha256', config.pagoFacilSecret);
+        hmac.setEncoding('hex');
+        hmac.end(message, function () {
+            res.send(hmac.read());
+        });
+    };
