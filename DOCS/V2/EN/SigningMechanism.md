@@ -36,17 +36,19 @@ All requests and responses must be signed/verified using HMAC-SHA256 where:
       end
 ## Javascript Signing Example
     const crypto = require('crypto');
-    module.exports = function (req, res) { //Express Handler for post request
-        var message = Object.keys(req.body)
-            .map(k=>[k, req.body[k]])
-            .filter(p=>p[0].indexOf('ct_') === 0)
+    // Receives a map with the params
+    module.exports = function(params){
+        // Sorts, concatenates and hashes the parameters
+        var message = Object.keys(params)
+            .map(k=>[k, params[k]])
+            .filter(p=>p[0].indexOf('ct_') === 0 && p[0] !== 'ct_firma')
             .map(p=>p.join(''))
             .sort()
             .join('');
 
         var hmac = crypto.createHmac('sha256', config.pagoFacilSecret);
         hmac.setEncoding('hex');
-        hmac.end(message, function () {
-            res.send(hmac.read());
-        });
+        hmac.write(message);
+        hmac.end();
+        return hmac.read();
     };
