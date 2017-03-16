@@ -16,7 +16,7 @@ Not much really, PFPG is designed to be easy to implement, does not matter the l
 
 ## Documentation
 
-* [V1 English version.](DOCS/V1/EN/README.md)
+* [V1 English version. (Legacy)](DOCS/V1/EN/README.md)
 * [V2 English version. (Recommended)](DOCS/V2/EN/README.md)
 
 ## Already Build Apps / Plugins
